@@ -1,0 +1,508 @@
+/* RESET PADRÃO ATUALIZADO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    /* 🔒 TRAVA GLOBAL: Desativa cursor de digitação em textos estáticos do site inteiro */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* VARIÁVEIS CROMÁTICAS DE NEUROMARKETING (FORÇA MÁXIMA DA FOME) */
+:root {
+    --cor-fundo: #080402;        /* Preto Carbono Extremo para contraste absoluto */
+    --cor-principal: #e62200;    /* Vermelho-Sangue Brasa (Gatilho Biológico de Urgência) */
+    --cor-secundaria: #ffcc00;   /* Dourado Gema/Crocante (Gatilho de Satisfação e Sabor) */
+    --cor-texto: #ffffff;
+    --sombra-brasa: 0 0 25px #e62200;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* EFEITO DE INCANDESCÊNCIA VIVA (SIMULA O CALOR DA CHURRASQUEIRA) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(230,34,0,0.22) 0%, rgba(0,0,0,0) 65%);
+    animation: brasaViva 3s infinite alternate ease-in-out; /* Ficou ligeiramente mais rápida para gerar energia */
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes brasaViva {
+    0% { opacity: 0.5; transform: scale(1); filter: blur(2px); }
+    100% { opacity: 1; transform: scale(1.08); filter: blur(0px); }
+}
+
+/* CONTAINER CENTRALIZADO */
+.linktree-container {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 20px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* CONTAINER DA LOGO (SOLUÇÃO FORCE-CENTER: Alinhamento garantido por Flexbox dedicado) */
+.logo-box {
+    position: relative;
+    display: flex !important; 
+    justify-content: center !important; 
+    align-items: center !important;
+    margin: 0 auto 40px auto !important; 
+    width: 140px;
+    height: 140px;
+}
+
+/* LOGO TOTALMENTE REDONDA - COM BORDA DE FOGO ILUMINADA */
+.logo-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important; 
+    border: 4px solid var(--cor-secundaria);
+    box-shadow: 0 0 20px var(--cor-principal), inset 0 0 15px var(--cor-principal);
+    object-fit: cover;
+    overflow: hidden; 
+    animation: rolarGaleto 25s linear infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes rolarGaleto {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.logo-box:hover .logo-img {
+    animation-play-state: paused; 
+    transform: scale(1.08); 
+    box-shadow: 0 0 35px var(--cor-principal); 
+}
+
+/* STATUS DE FUNCIONAMENTO (PULSO ACESO) */
+.badge-aberto {
+    position: absolute;
+    bottom: -8px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00cc66; /* Verde Alimento Fresco e Liberado */
+    color: #fff;
+    padding: 4px 16px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px rgba(0, 204, 102, 0.6);
+    z-index: 3; 
+    white-space: nowrap; 
+}
+
+h1 {
+    font-family: 'Impact', sans-serif;
+    font-size: 2.4rem; /* Um pouco maior para impor autoridade visual */
+    letter-spacing: 1.5px;
+    color: var(--cor-secundaria);
+    text-shadow: 3px 3px 0px #000;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-size: 0.95rem;
+    color: #e6cebf; /* Tom mais claro de trigo rústico para melhor leitura */
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* CAIXA DE ESCASSEZ VISUAL (ALERTA CRÍTICO DE COMPRA) */
+.escassez-box {
+    background: rgba(230, 34, 0, 0.08);
+    border: 1.5px dashed var(--cor-principal); /* Tracejado mais imponente */
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 0.8rem;
+    box-shadow: inset 0 0 10px rgba(230, 34, 0, 0.1);
+}
+
+.escassez-texto {
+    color: var(--cor-secundaria); 
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 10px; /* Um pouco mais grossa para impacto visual */
+    background: #1a0802;
+    border-radius: 10px;
+    margin-top: 8px;
+    overflow: hidden;
+    border: 1px solid #331105;
+}
+
+.progresso-preenchido {
+    width: 12%; /* Diminuído para 12% (Gatilho de fim de estoque ainda mais violento) */
+    height: 100%;
+    background: linear-gradient(90deg, var(--cor-secundaria), var(--cor-principal));
+    box-shadow: 0 0 10px var(--cor-principal);
+    animation: queimaBarra 1.5s infinite alternate;
+}
+
+@keyframes queimaBarra {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.4); }
+}
+
+/* BOTÕES DE ENGAJAMENTO COM HIGHLIGHT TÉRMICO */
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.btn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #140702 0%, #260f04 100%);
+    border: 2px solid #381607;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* BOTÃO DE DESTAQUE ABSOLUTO (PULSO DE ADRENALINA VISUAL) */
+.btn-destaque {
+    background: linear-gradient(135deg, var(--cor-principal) 0%, #b31a00 100%);
+    border: 2px solid var(--cor-secundaria);
+    box-shadow: var(--sombra-brasa);
+    animation: pulsoBotao 2s infinite;
+}
+
+@keyframes pulsoBotao {
+    0% { box-shadow: 0 0 0 0 rgba(230, 34, 0, 0.8); transform: scale(1); }
+    50% { transform: scale(1.02); }
+    70% { box-shadow: 0 0 0 15px rgba(230, 34, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(230, 34, 0, 0); transform: scale(1); }
+}
+
+.btn-link:hover {
+    transform: translateY(-4px);
+    border-color: var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    box-shadow: 0 6px 15px rgba(255, 204, 0, 0.15);
+}
+
+.btn-destaque:hover {
+    color: #fff;
+    filter: brightness(1.15);
+}
+
+.btn-link i {
+    font-size: 1.3rem;
+}
+
+/* CARD DO GERENCIADOR DE ÁUDIO (MANTÉM DESIGN COMPACTO) */
+.som-control {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    background: rgba(255, 204, 0, 0.08);
+    border: 1px solid rgba(255, 204, 0, 0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.som-control:hover {
+    background: rgba(255, 204, 0, 0.15);
+    transform: scale(1.03);
+}
+
+/* RODAPÉ LOCACIONAL */
+.footer-info {
+    margin-top: 45px;
+    font-size: 0.8rem;
+    color: #8c7366;
+    line-height: 1.6;
+}
+
+.footer-info i {
+    color: var(--cor-principal);
+    margin-right: 4px;
+}
+
+/* ASSINATURA DO DESENVOLVEDOR */
+.dev-box {
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+}
+
+a.dev-credito {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 0.75rem !important;
+    color: var(--cor-secundaria) !important; 
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    transition: all 0.3s ease !important;
+    border: 1px dashed rgba(255, 204, 0, 0.25) !important;
+    padding: 6px 14px !important;
+    border-radius: 30px !important;
+    background: rgba(255, 204, 0, 0.02) !important;
+}
+
+a.dev-credito:hover {
+    color: #ffffff !important; 
+    background: rgba(230, 34, 0, 0.12) !important; 
+    border-color: var(--cor-principal) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(230, 34, 0, 0.2) !important;
+}
+
+a.dev-credito i {
+    color: var(--cor-principal) !important; 
+    font-size: 0.85rem !important;
+    animation: pulsoDev 2s infinite alternate !important;
+}
+
+@keyframes pulsoDev {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 4px var(--cor-principal)); }
+}
+
+
+
+/* ==========================================================================
+   ADICIONAIS DO CARDÁPIO DIGITAL (Adicionado ao final do arquivo)
+   ========================================================================== */
+
+/* BOTÃO VOLTAR REESTRUTURADO E DESTACADO */
+.btn-voltar {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    color: var(--cor-secundaria) !important;
+    text-decoration: none !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border: 1px solid rgba(255, 204, 0, 0.25) !important;
+    padding: 8px 18px !important;
+    border-radius: 30px !important;
+    background: rgba(255, 204, 0, 0.03) !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 25px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.btn-voltar:hover {
+    color: #ffffff !important;
+    background: rgba(230, 34, 0, 0.15) !important; 
+    border-color: var(--cor-principal) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(230, 34, 0, 0.2) !important;
+}
+.btn-voltar i {
+    font-size: 0.9rem !important;
+}
+
+.titulo-secao {
+    font-family: 'Impact', sans-serif;
+    font-size: 1.6rem;
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 30px 0 15px 0;
+    border-bottom: 2px dashed #401002; 
+    padding-bottom: 8px;
+    text-align: left;
+    text-shadow: 2px 2px 0px #000;
+}
+.grid-cardapio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+.item-cardapio {
+    background: linear-gradient(135deg, #140702 0%, #260f04 100%); 
+    border: 1px solid #381607;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;
+}
+.item-cardapio:hover {
+    transform: translateY(-2px);
+    border-color: var(--cor-secundaria);
+}
+.item-promo {
+    border: 1.5px dashed var(--cor-principal);
+    background: linear-gradient(135deg, #1a0802 0%, #331405 100%);
+    box-shadow: 0 0 15px rgba(230, 34, 0, 0.15);
+}
+.badge-promo {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: var(--cor-principal);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    padding: 2px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px var(--cor-principal);
+    letter-spacing: 0.5px;
+}
+
+/* COMPUTAÇÃO DE GRID ROBUSTA: Protege o preço e impede quebras estranhas */
+.item-topo {
+    display: grid !important;
+    grid-template-columns: 1fr minmax(85px, auto) !important; /* CORREÇÃO: Garante um espaço mínimo fixo de 85px para o preço à direita */
+    align-items: center !important;
+    gap: 16px !important; /* Espaço de segurança obrigatório entre o texto e o preço */
+    margin-bottom: 8px;
+    width: 100% !important;
+}
+
+.item-topo h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000;
+    line-height: 1.3;
+    margin: 0 !important;
+}
+
+.item-preco-tag {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    white-space: nowrap !important; /* CORREÇÃO MÁXIMA: Proíbe o preço de quebrar em duas linhas */
+    text-shadow: 1px 1px 2px #000;
+    text-align: right;
+    display: inline-block !important;
+}
+
+.item-detalhe {
+    font-size: 0.8rem;
+    color: #e6cebf; 
+    line-height: 1.4;
+}
+.rodape-cardapio-btn {
+    margin-top: 25px;
+    margin-bottom: 25px; 
+}
+
+.pdf-box {
+    margin: 25px 0 15px 0;
+    background: linear-gradient(135deg, #100501 0%, #1a0802 100%);
+    border: 1px solid #331105;
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+}
+.pdf-texto {
+    font-size: 0.8rem;
+    color: #bfaaa0;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+.btn-pdf {
+    background: linear-gradient(135deg, #140702 0%, #080402 100%) !important;
+    border: 2px solid #381607 !important;
+    color: #e6cebf !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.btn-pdf:hover {
+    border-color: var(--cor-secundaria) !important;
+    color: var(--cor-secundaria) !important;
+    background: linear-gradient(135deg, #260f04 0%, #140702 100%) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.1) !important;
+}
+.btn-pdf i {
+    color: var(--cor-secundaria) !important;
+}
+
+/* COMPORTAMENTO SELECIONADO (MUDANÇA PARA VERDE COMPRA) */
+.item-cardapio.selecionado {
+    border-color: #00cc66 !important; 
+    background: linear-gradient(135deg, #092615 0%, #140702 100%) !important; 
+    box-shadow: 0 0 20px rgba(0, 204, 102, 0.3) !important;
+    transform: scale(1.02);
+}
+.item-cardapio.selecionado::after {
+    content: ' ✔️ Selecionado';
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--cor-secundaria);
+    background: rgba(0,0,0,0.5);
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-secundaria);
+}
+/* AJUSTE DO NOVO BLOCO DE TÍTULO */
+.item-titulo-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* ESTILO DA LINHA DE UNIDADES (CORRIGIDO: Sem quebras e com leitura perfeita) */
+.item-unidade {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: var(--cor-secundaria) !important; /* Deixa o texto em dourado para chamar atenção */
+    white-space: nowrap !important;
+    text-transform: none !important;
+}
